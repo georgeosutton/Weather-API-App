@@ -8,7 +8,8 @@ if (navigator.geolocation){
 long = position.coords.longitude;
 lat = position.coords.latitude;
 
-const api = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=28def05e60bacf29656e604ca4b2be85`;
+
+const api = `${proxy}api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=28def05e60bacf29656e604ca4b2be85`;
 
 
 fetch(api)
