@@ -15,7 +15,7 @@ body{
 }
 
 .location, .temperature{
-    height:30vh;
+    height:20vh;
     width: 30%;
     display: flex;
     justify-content: space-around;
@@ -23,7 +23,9 @@ body{
 }
 
 .temperature{
+    justify-content: center;
     flex-direction: column;
+    gap:20px;
 }
 .degree-section{
     display: flex;

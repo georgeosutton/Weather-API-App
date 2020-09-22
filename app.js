@@ -37,6 +37,7 @@ fetch(api)
 
 
          let {icon, description} = data.weather["0"];
+         
          setIcon(icon)
          setDesciption(description)
      });
@@ -49,7 +50,7 @@ function setIcon(icon){
 }
 
 function setDesciption(description){
-    tempDesc.textContent= description
+    tempDesc.textContent= description.replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())));
 }
 
 });
