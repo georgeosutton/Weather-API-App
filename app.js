@@ -1,7 +1,7 @@
 let tempDesc = document.querySelector('.temperature-description');
 let tempDegree = document.querySelector('.temperature-degree');
-let locationTimezone = document.querySelector('.location-timezone');
-
+let Currentlocation = document.querySelector('.location-h1');
+let weatherIcon = document.querySelector('.weather-icon')
 
 window.addEventListener('load', ()=>{
 let long;
@@ -14,7 +14,7 @@ if (navigator.geolocation){
 long = position.coords.longitude;
 lat = position.coords.latitude;
 
-const api = `api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=28def05e60bacf29656e604ca4b2be85`;
+const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=b72067057be53cb5c1a6f0ab3416641b`;
 
 
 fetch(api)
@@ -24,12 +24,33 @@ fetch(api)
      .then(data =>{
          console.log(data)
          let {temp} = data.main;
-         //Set DOM Elements from the API
+        
          temp = Math.round(temp - 273.15);
          tempDegree.textContent = temp;
+
+
+
+         let name = data.name;
+         Currentlocation.textContent = name;
+
+
+
+
+         let {icon, description} = data.weather["0"];
+         setIcon(icon)
+         setDesciption(description)
      });
     });
 } 
+
+function setIcon(icon){
+    weatherIcon.src = `http://openweathermap.org/img/wn/${icon}@2x.png`
+    console.log(icon)
+}
+
+function setDesciption(description){
+    tempDesc.textContent= description
+}
 
 });
 
