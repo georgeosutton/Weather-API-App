@@ -1,4 +1,4 @@
 # Weather-App
 
 
-https://eloquent-bose-5d64cb.netlify.app/
+weather-api-demo.netlify.app
