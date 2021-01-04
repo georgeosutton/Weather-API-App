@@ -1,4 +1,4 @@
 # Weather-App
 
 
-weather-api-demo.netlify.app
+https://weather-api-demo.netlify.app/
