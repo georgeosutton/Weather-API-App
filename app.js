@@ -3,8 +3,6 @@ let tempDegree = document.querySelector(".temperature-degree");
 let Currentlocation = document.querySelector(".location-h1");
 let weatherIcon = document.querySelector(".weather-icon");
 
-require("dotenv").config();
-
 window.addEventListener("load", () => {
   let long;
   let lat;
@@ -14,7 +12,7 @@ window.addEventListener("load", () => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
 
-      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${process.env.APP_WEATHER_API}`;
+      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=b72067057be53cb5c1a6f0ab3416641b`;
 
       fetch(api)
         .then((response) => {
