@@ -3,6 +3,8 @@ let tempDegree = document.querySelector(".temperature-degree");
 let Currentlocation = document.querySelector(".location-h1");
 let weatherIcon = document.querySelector(".weather-icon");
 
+require("dotenv").config();
+
 window.addEventListener("load", () => {
   let long;
   let lat;
